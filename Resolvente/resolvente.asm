@@ -23,23 +23,22 @@ section .data
 section .text
 global CMAIN
 CMAIN:
+    ;enter
     push ebp        
     mov ebp, esp
-    
+    ;obtengo los parámetros
     FLD dword[ebp+8]
     FSTP qword[a]
     FLD dword[ebp+12]
     FSTP qword[b]
     FLD dword[ebp+16]
     FSTP qword[c]
-        
     ;calculo dividendo
     FLD qword[a]
     FLD qword[dos]
     FMUL
     FSTP qword[dividendo]
-    
-    ;raiz
+    ;calculo raiz
     FLD qword[b]
     FLD qword[b]
     FMUL
@@ -52,18 +51,18 @@ CMAIN:
     FADD
     FSQRT
     FSTP qword[raiz]
-    
-    ;parte positiva
+    ;calculo parte positiva
     FLD qword[unon]
     FLD qword[b]
     FMUL
+
     FLD qword[raiz]
     FADD
+
     FLD qword[dividendo]
     FDIV
     FSTP qword[result1];guardo x1
-    
-    ;parte negativa
+    ;calculo parte negativa
     FLD qword[unon]
     FLD qword[b]
     FMUL        
@@ -73,10 +72,10 @@ CMAIN:
     FMUL    
 
     FADD
+
     FLD qword[dividendo]
     FDIV
     FSTP qword[result2];guardo x2
-    
     ;imprimo las raíces
     push dword[result1+4]
     push dword[result1]
@@ -89,7 +88,7 @@ CMAIN:
     push format2
     call printf
     add esp, 12
-    
+    ;leave
     mov esp, ebp
     pop ebp
     ret
