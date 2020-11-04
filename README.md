@@ -9,3 +9,7 @@ Dados los valores a, b y c el programa calcula las raíces de una función cuadr
 - El programa se ejecutará automáticamente y le pedirá ingresar los valores correspondientes. Una vez ingresados, se obtendrá las raíces aplicando la fórmula resolvente.
 
 ![](https://raw.githubusercontent.com/gustavoecruz/ResolventeASM/main/Resources/Captura2.PNG)
+
+# Ejercicios obligatorios
+
+Esta carpeta cuenta con los ejercicios 4, 6 y 7 de gestión de memoria y el ejercicio 4 de FPU
